@@ -1,26 +1,26 @@
-CREATE TABLE departments (
-    dept_no int  NOT NULL ,
+﻿CREATE TABLE departments (
+    dept_no varchar(70),
     dept_name varchar(70)  NOT NULL ,
     PRIMARY KEY (
         dept_no
-    )
+	)
 );
 
 CREATE TABLE dept_emp (
-    emp_no int  NOT NULL ,
+    emp_no int,
     dept_no varchar(70)  NOT NULL ,
     PRIMARY KEY (
-        emp_no
+        emp_no, dept_no
     )
 );
 
 CREATE TABLE dept_manager (
     dept_no varchar(70)  NOT NULL ,
-    emp_no varchar(70)  NOT NULL 
+    emp_no int 
 );
 
 CREATE TABLE employees (
-    emp_no int  NOT NULL ,
+    emp_no int,
     title_id varchar(15)  NOT NULL ,
     birth_date date  NOT NULL ,
     first_name varchar(30)  NOT NULL ,
@@ -33,8 +33,8 @@ CREATE TABLE employees (
 );
 
 CREATE TABLE salaries (
-    emp_no int  NOT NULL ,
-    salary float  NOT NULL ,
+    emp_no int,
+    salary float,
     PRIMARY KEY (
         emp_no
     )
